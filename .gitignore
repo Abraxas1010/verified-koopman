@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Model checkpoints / experiment outputs
+outputs/
+*.pt
+*.pth
+*.onnx
+
+# Lean / Lake build artifacts
+lean/.lake/
+lean/.cache/

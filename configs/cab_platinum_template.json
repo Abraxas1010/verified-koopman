@@ -1,0 +1,31 @@
+{
+  "version": "cab-export-2",
+  "lens_id": "koopman_nba_safedmd_platinum",
+  "verification_tier": "platinum",
+  "algebraic_verification": {
+    "lean_modules": [
+      "HeytingLean.Eigen.NucleusReLU",
+      "HeytingLean.Eigen.SafEDMD",
+      "HeytingLean.Analysis.Lyapunov.StableGenerator"
+    ],
+    "theorems": [
+      "reluNucleus_idempotent",
+      "relu_sqSum_le_sqSum",
+      "stableGenerator_hurwitz"
+    ],
+    "dimension_independent": true
+  },
+  "numeric_verification": {
+    "method": "alpha_beta_crown",
+    "compositional": true,
+    "latent_dim": 8
+  },
+  "control_verification": {
+    "method": "safedmd_sdp",
+    "error_bound_module": "verified_koopman.verification.safedmd.error_bounds",
+    "controller_module": "verified_koopman.verification.safedmd.controller",
+    "sdp_status": "optimal",
+    "closed_loop_property": "lifted quadratic Lyapunov decay under SafEDMD residual envelope"
+  },
+  "artifacts": []
+}

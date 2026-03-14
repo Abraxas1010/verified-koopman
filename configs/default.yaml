@@ -1,0 +1,48 @@
+data:
+  n_traj: 256
+  time: 201
+  train_frac: 0.8
+  seed: 0
+
+model:
+  latent_dim: 8
+  hidden_dim: 128
+  depth: 3
+  dt: 0.02
+  nucleus_type: relu
+  nucleus_threshold: 0.0
+
+e2e:
+  latent_dim: 8
+  hidden_dim: 128
+  depth: 3
+  dt: 0.02
+  init_threshold: 0.0
+  init_lo: 0.0
+  init_hi: 2.0
+  min_gap: 0.1
+  heyting_temperature: 0.05
+
+train:
+  epochs: 200
+  batch_size: 1024
+  lr: 0.0003
+  weight_decay: 0.0
+  recon_weight: 1.0
+  pred_weight: 1.0
+  grad_clip: 1.0
+  log_every: 1
+
+curriculum:
+  enabled: true
+  schedule: staged
+  stage1_epochs: 50
+  warmup_epochs: 100
+  relative_regularity: true
+  lambdas:
+    regularity: 1.0
+    tightness: 0.2
+    internalization: 0.5
+    threshold_utility: 0.1
+    width_stability: 0.1
+
