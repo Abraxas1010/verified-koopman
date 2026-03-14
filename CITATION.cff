@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Verified Koopman: Proof-Carrying Nucleus-Bottleneck Koopman Autoencoders"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - name: "Apoth3osis (Equation Capital LLC)"
+    email: "rgoodman@apoth3osis.io"
+license: "Apoth3osis License Stack v1"
+repository-code: "https://github.com/Abraxas1010/verified-koopman"
+keywords:
+  - koopman-operator
+  - formal-verification
+  - lean4
+  - nucleus-bottleneck
+  - safedmd
+  - dynamical-systems
+  - proof-carrying-code
+  - lyapunov-stability
+  - controller-synthesis
