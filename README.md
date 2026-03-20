@@ -24,6 +24,19 @@ A minimal, publication-oriented implementation of **proof-carrying** Koopman aut
 
 This repository provides a complete pipeline for learning Koopman operator approximations from trajectory data with formal verification guarantees. The nucleus-bottleneck autoencoder (NBA) constrains the latent space via a ReLU nucleus — an idempotent, meet-preserving projection — whose algebraic properties are proved in Lean 4 against Mathlib. SafEDMD-inspired error bounds and SDP controller synthesis close the loop from learned dynamics to certified stability.
 
+## Certified EDMD for Lattice GFF (NEW)
+
+The [`edmd-lattice-gff/`](edmd-lattice-gff/) directory contains a **2,251-line Lean 4 formalization** proving certified error bounds for EDMD estimation on lattice Gaussian Free Field Fourier modes. This work builds on [Douglas, Hoback, Mei & Nissim (arXiv:2603.15770)](https://arxiv.org/abs/2603.15770), who proved all five Osterwalder-Schrader axioms for the massive GFF in d=4.
+
+**88 theorems, zero sorry, zero axioms.** Key results:
+- Sub-Gaussian concentration chain for weighted innovation sums
+- EDMD quotient identity and conservative runtime radius
+- Lattice OU Fourier innovation model with product-measure independence
+- Certificate surface bridging formal proofs to runtime diagnostics
+- Continuum bridge through restricted Koopman correlations with exponential decay
+
+See [`edmd-lattice-gff/README.md`](edmd-lattice-gff/README.md) for the full theorem inventory and build instructions.
+
 ## What's Verified (Lean 4)
 
 All proofs build sorry-free against Mathlib. Run verification locally:
